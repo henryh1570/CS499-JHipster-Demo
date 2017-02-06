@@ -1,0 +1,26 @@
+entity Person {
+	name String
+}
+
+entity Animal {
+	name String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Item {
+	name String
+}
+
+relationship ManyToOne {
+	Person{owns} to Animal
+}
+
+relationship ManyToMany {
+	Person{uses} to Item
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span>Person</span> {{vm.person.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.person.name}}</span>
+        </dd>
+        <dt><span>Owns</span></dt>
+        <dd>
+            <a ui-sref="animal-detail({id:vm.person.ownsId})">{{vm.person.ownsId}}</a>
+        </dd>
+        <dt><span>Uses</span></dt>
+        <dd>
+            <span ng-repeat="uses in vm.person.uses">
+                <a ui-sref="item-detail({id: uses.id})">{{uses.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="person-detail.edit({id:vm.person.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

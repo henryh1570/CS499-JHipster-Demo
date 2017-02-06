@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Person.
+    -->
+    <changeSet id="20170206091436-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="owns_id"
+                                 baseTableName="person"
+                                 constraintName="fk_person_owns_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="animal"/>
+
+        <addForeignKeyConstraint baseColumnNames="people_id"
+                                 baseTableName="person_uses"
+                                 constraintName="fk_person_uses_people_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="person"/>
+        <addForeignKeyConstraint baseColumnNames="uses_id"
+                                 baseTableName="person_uses"
+                                 constraintName="fk_person_uses_uses_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="item"/>
+        
+    </changeSet>
+</databaseChangeLog>
