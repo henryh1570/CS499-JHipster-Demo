@@ -4,7 +4,9 @@ CS499 - Assignment 2: JHipster Demo
 Entites:
 --------
 Person - Name
+
 Item - Name
+
 Animal - Name
 
 Relationships:
